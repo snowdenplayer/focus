@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header @showModal="showModal" />
+    <Main></Main>
+    <Footer></Footer>
+
+     <Modal
+        v-if="isVisibleModal"
+        @closeModal="showModal"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from "@/components/Header";
+import Modal from "@/components/Modal";
+import Main from "@/components/Main";
+import Footer from "@/components/Footer";
 export default {
   name: 'App',
+  data(){
+    return{
+      isVisibleModal: false
+    }
+  },
   components: {
-    HelloWorld
+    Header,
+    Modal,
+    Main,
+    Footer
+  },
+  methods:{
+    showModal(){
+      this.isVisibleModal = !this.isVisibleModal
+    }
+  },
+  watch:{
+    isVisibleModal: function (){
+      if(this.isVisibleModal){
+        console.log('rtsd')
+        document.documentElement.style.overflow = 'hidden'
+      }else{
+        document.documentElement.style.overflow = 'auto'
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

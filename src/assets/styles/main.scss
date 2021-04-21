@@ -1,0 +1,102 @@
+@import 'reset';
+@import 'variables';
+
+@font-face {
+  font-family: 'Cera';
+  src: url('../fonts/CeraPro-Regular.ttf');
+}
+
+body {
+  font-family: Cera;
+  background-color: $bgColor
+}
+
+.container--fluid {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30px;
+}
+.container{
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+}
+
+.f__badge {
+  padding: 4px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f__badge--lite {
+  background-color: $mainWhite;
+  color: $mainBlack;
+}
+
+.f__badge--dark {
+  background-color: $mainBlack;
+  color: $mainWhite;
+}
+.item__time{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #000000;
+  opacity: 0.5;
+}
+.h2{
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 54px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.m-block{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+@media (min-width: 1660px) {
+  .container--fluid {
+    max-width: 1430px;
+    padding: 0 30px;
+  }
+  .container {
+    max-width: 1430px;
+  }
+}
+
+@media (max-width: 1660px) {
+  .container {
+    max-width: 1250px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container--fluid {
+    padding: 0 15px;
+  }
+  .container{
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+  .h2{
+    font-size: 30px;
+  }
+}
